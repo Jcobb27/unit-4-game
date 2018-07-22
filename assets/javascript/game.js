@@ -50,7 +50,7 @@ $(document).ready(function () {
        //check for loss, total the losses, write to page
        if (totalScore > targetScore) {
         losses += 1;
-        alert("losses: " + losses);
+        alert("Your score went above the random number. Please try again.");
         $("#losses-text").text(losses);
         newGame();
     };
@@ -58,7 +58,7 @@ $(document).ready(function () {
     //check for win, total the wins, write to page
     if (totalScore == targetScore) {
         wins += 1;
-        alert("wins: " + wins);
+        alert("You win! Click ok to play again.");
         $("#wins-text").text(wins);
         newGame();
     };
