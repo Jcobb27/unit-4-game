@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //set global variables
-    var jewelsList = [{id:"blue", jewelValue: getJewelValue(1, 40)}, {id: "green", jewelValue: getJewelValue(1, 30)}, {id: "pink", jewelValue: getJewelValue(1, 20)}, {id: "purple", jewelValue: getJewelValue(1, 40)}
+    var jewelsList = [{id:"blue", jewelValue: getJewelValue()}, {id: "green", jewelValue: getJewelValue()}, {id: "pink", jewelValue: getJewelValue()}, {id: "purple", jewelValue: getJewelValue()}
     ]
     var targetScore;
     var totalScore = 0;
@@ -8,12 +8,13 @@ $(document).ready(function () {
     var losses = 0;
 
     //Select a random number for target score and write to html
-    targetScore = Math.floor(Math.random() * 200) + 50;
+    targetScore = Math.floor(Math.random() * 120) + 19;
+    targetScore = parseInt(targetScore);
     $("#randomBox").text(targetScore);
     
     //random number function for jewel value
-    function getJewelValue(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+    function getJewelValue() {
+        return Math.floor(Math.random() * 12) + 1;
     }
     console.log (jewelsList);
 
@@ -29,10 +30,27 @@ $(document).ready(function () {
             }};
     //Add the jewel value to the total score    
     totalScore = totalScore + userPickValue;
+    totalScore = parseInt(totalScore);
     console.log("Total score: " + totalScore);
     $("#total-score").text(totalScore);
-    })
- 
+
+       //check for loss, total the losses, write to page
+       if (totalScore > targetScore) {
+        losses += 1;
+        alert("losses: " + losses);
+        $("#losses-text").text(losses);
+        //new game function
+    };
+    
+    //check for win, total the wins, write to page
+    if (totalScore == targetScore) {
+        wins += 1;
+        alert("wins: " + wins);
+        $("#wins-text").text(wins);
+        //new game function
+    };
+    });
+    
 });
         
 
