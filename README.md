@@ -11,7 +11,7 @@ Each time the game starts, the value of each crystal will change.
 
 Crystal image credit: Code Inferno Games (codeinferno.com)
 
-![Screenshot](assets/images/CC screenshot)
+![Screenshot](assets/images/CC screenshot.PNG)
 
 Play here:
 https://jcobb27.github.io/unit-4-game/
