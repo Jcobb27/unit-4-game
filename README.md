@@ -1,4 +1,4 @@
-# unit-4-game
+# Crystals Collector Game
 
 Game created by Jennifer Cobb using HTML, CSS, Bootstrap, Javascript, and JQuery.
 
